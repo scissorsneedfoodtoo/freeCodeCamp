@@ -115,14 +115,15 @@ class InstantSearchRoot extends Component {
   };
 
   render() {
-    const { query } = this.props;
+    // const { query, location } = this.props;
+    const { location } = this.props;
     return (
       <InstantSearch
         apiKey='4318af87aa3ce128708f1153556c6108'
         appId='QMJYL5WYTI'
-        indexName='news'
+        indexName={location.pathname === '/news' ? 'news' : 'challenges'}
         onSearchStateChange={this.onSearchStateChange}
-        searchState={{ query }}
+        // searchState={{ query }}
       >
         <Configure hitsPerPage={15} />
         {this.props.children}

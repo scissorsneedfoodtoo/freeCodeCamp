@@ -6,7 +6,7 @@ export const ns = 'search';
 
 const initialState = {
   query: '',
-  indexName: 'news',
+  indexName: 'challenges',
   isSearchDropdownEnabled: true,
   isSearchBarFocused: false
 };
