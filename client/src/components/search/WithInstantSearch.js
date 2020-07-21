@@ -21,10 +21,26 @@ import { createSelector } from 'reselect';
 const DEBOUNCE_TIME = 100;
 
 // If a key is missing, searches will fail, but the client will still render.
-const searchClient =
+const algoliaClient =
   algoliaAppId && algoliaAPIKey
     ? algoliasearch(algoliaAppId, algoliaAPIKey)
     : {};
+
+const searchClient = {
+  search(requests) {
+    const newRequests = requests.map(request => {
+      request.params.query = request.params.query.trim();
+      let currQuery = request.params.query;
+      // Do not log empty strings to analytics
+      if (!currQuery || currQuery.length === 0) {
+        request.params.analytics = false;
+      }
+      return request;
+    });
+
+    return algoliaClient.search(newRequests);
+  }
+};
 
 const propTypes = {
   children: PropTypes.any,
@@ -58,9 +74,14 @@ class InstantSearchRoot extends Component {
   }
 
   componentDidUpdate(prevProps) {
-    const { location, toggleSearchDropdown, isDropdownEnabled } = this.props;
+    const {
+      location,
+      toggleSearchDropdown,
+      isDropdownEnabled,
+      query
+    } = this.props;
 
-    const enableDropdown = !this.isSearchPage();
+    const enableDropdown = !this.isSearchPage() && query.trim() !== '';
     if (isDropdownEnabled !== enableDropdown) {
       toggleSearchDropdown(enableDropdown);
     }
