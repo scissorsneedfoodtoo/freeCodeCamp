@@ -359,6 +359,10 @@
       "learn-basic-algorithmic-thinking-by-building-a-number-sorter": {
         "title": "Learn Basic Algorithmic Thinking by Building a Number Sorter",
         "intro": ["", ""]
+      },
+      "learn-recursion-by-building-a-decimal-to-binary-converter": {
+        "title": "Learn Recursion by Building a Decimal to Binary Converter",
+        "intro": ["", ""]
       }
     }
   },
