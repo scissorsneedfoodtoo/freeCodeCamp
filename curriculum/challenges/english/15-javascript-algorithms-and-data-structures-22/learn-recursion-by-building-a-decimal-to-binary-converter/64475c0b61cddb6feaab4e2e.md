@@ -1,17 +1,19 @@
 ---
-id: 640067f276acd525509646cc
-title: Step 8
+id: 64475c0b61cddb6feaab4e2e
+title: Step 10
 challengeType: 0
-dashedName: step-8
+dashedName: step-10
 ---
 
 # --description--
 
-Your `Convert` button should be working now. But it could get tiring for users if they have to enter in a number, then click that button each time they want to convert from decimal to binary. It would be much more convenient to perform the conversion when the `Enter` (or `Return` for Mac) key is pressed.
+If you open your browser's console and type in the number input, you'll see event objects logged to the browser. If you take a closer look at one of those event objects, you'll see helpful properties like `type` and `target`.
 
-The `keydown` event fires every time a user presses a key on their keyboard, and is a good way to add more interactivity to `input` elements.
+But since you want to perform an action when the `Enter` key is pressed, the most helpful property is `key`, which tells you the string value of the key that was pressed.
 
-Chain `.addEventListener()` to `numberInput`. Pass the string `keydown` as the first parameter and pass an empty callback function as the second parameter to `.addEventListener()`.
+Remove the `console.log()` statement from the callback function and add an `if` statement that checks if `e.key` is equal to `"Enter"`. Leave the body of your `if` statement empty for now.
+
+Note: Since the `Enter` and `Return` keys have similar functions, they both have the same string value of `"Enter"`.
 
 # --hints--
 
@@ -134,7 +136,9 @@ const checkUserInput = () => {
 
 convertBtn.addEventListener("click", checkUserInput);
 
---fcc-editable-region--
-
---fcc-editable-region--
+numberInput.addEventListener("keydown", (e) => {
+  --fcc-editable-region--
+  console.log(e);
+  --fcc-editable-region--
+});
 ```
