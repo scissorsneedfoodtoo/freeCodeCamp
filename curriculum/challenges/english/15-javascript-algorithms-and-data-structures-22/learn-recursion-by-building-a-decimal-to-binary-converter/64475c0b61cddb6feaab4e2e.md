@@ -1,8 +1,8 @@
 ---
 id: 64475c0b61cddb6feaab4e2e
-title: Step 10
+title: Step 14
 challengeType: 0
-dashedName: step-10
+dashedName: step-14
 ---
 
 # --description--
@@ -127,8 +127,9 @@ const numberInput = document.getElementById("number");
 const convertBtn = document.getElementById("convert");
 
 const checkUserInput = () => {
-  if (numberInput.value === "") {
+  if (!numberInput.value || isNaN(parseInt(numberInput.value))) {
     alert("Please provide a number");
+    return;
   }
 
   console.log(numberInput.value);

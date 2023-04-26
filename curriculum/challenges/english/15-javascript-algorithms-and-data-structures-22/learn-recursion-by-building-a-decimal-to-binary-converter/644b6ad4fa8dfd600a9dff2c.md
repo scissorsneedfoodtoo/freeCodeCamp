@@ -1,13 +1,13 @@
 ---
-id: 6448b2c9aec64c0ecd41573d
-title: Step 17
+id: 644b6ad4fa8dfd600a9dff2c
+title: Step 24
 challengeType: 0
-dashedName: step-17
+dashedName: step-24
 ---
 
 # --description--
 
-Within your `checkUserInput` function, remove the `console.log()` statement. Then, call the `decimalToBinary` function and pass in the `value` of `numberInput` as an argument.
+Inside your `while` loop, use the `push()` method to append `input` to the `inputs` array. This will help you get a better idea of how the conversion works later when you log the contents of your arrays to the console.
 
 # --hints--
 
@@ -121,8 +121,16 @@ const numberInput = document.getElementById("number");
 const convertBtn = document.getElementById("convert");
 
 const decimalToBinary = (input) => {
+  const inputs = [];
+  const quotients = [];
+  const remainders = [];
 
-};
+  while (input > 0) {
+--fcc-editable-region--
+
+--fcc-editable-region--
+  }
+}
 
 const checkUserInput = () => {
   if (!numberInput.value || isNaN(parseInt(numberInput.value))) {
@@ -130,9 +138,7 @@ const checkUserInput = () => {
     return;
   }
 
-  --fcc-editable-region--
-  console.log(numberInput.value);
-  --fcc-editable-region--
+  decimalToBinary(numberInput.value);
 };
 
 convertBtn.addEventListener("click", checkUserInput);
