@@ -7,13 +7,11 @@ dashedName: step-14
 
 # --description--
 
-If you open your browser's console and type in the number input, you'll see event objects logged to the browser. If you take a closer look at one of those event objects, you'll see helpful properties like `type` and `target`.
+Now you can alert the user if they don't enter a number, or the number is invalid before you attempt to convert it into binary.
 
-But since you want to perform an action when the `Enter` key is pressed, the most helpful property is `key`, which tells you the string value of the key that was pressed.
+In the body of the `if` statement, use the `alert()` method to display the text `Please provide a valid number`.
 
-Remove the `console.log()` statement from the callback function and add an `if` statement that checks if `e.key` is equal to `"Enter"`. Leave the body of your `if` statement empty for now.
-
-Note: Since the `Enter` and `Return` keys have similar functions, they both have the same string value of `"Enter"`.
+Note that `alert()` is a method on the `window` object in the browser, so you can use either `window.alert()` or `alert()`.
 
 # --hints--
 
@@ -128,8 +126,9 @@ const convertBtn = document.getElementById("convert");
 
 const checkUserInput = () => {
   if (!numberInput.value || isNaN(parseInt(numberInput.value))) {
-    alert("Please provide a number");
-    return;
+    --fcc-editable-region--
+
+    --fcc-editable-region--
   }
 
   console.log(numberInput.value);
@@ -138,8 +137,8 @@ const checkUserInput = () => {
 convertBtn.addEventListener("click", checkUserInput);
 
 numberInput.addEventListener("keydown", (e) => {
-  --fcc-editable-region--
-  console.log(e);
-  --fcc-editable-region--
+  if (e.key === "Enter") {
+    checkUserInput();
+  }
 });
 ```
