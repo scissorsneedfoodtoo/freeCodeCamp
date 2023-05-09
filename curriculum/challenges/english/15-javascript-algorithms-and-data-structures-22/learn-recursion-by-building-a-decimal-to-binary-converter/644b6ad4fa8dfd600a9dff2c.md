@@ -1,8 +1,8 @@
 ---
 id: 644b6ad4fa8dfd600a9dff2c
-title: Step 24
+title: Step 25
 challengeType: 0
-dashedName: step-24
+dashedName: step-25
 ---
 
 # --description--
@@ -144,6 +144,7 @@ const checkUserInput = () => {
 convertBtn.addEventListener("click", checkUserInput);
 
 numberInput.addEventListener("keydown", (e) => {
+  // Respond to Enter or Return keydown events
   if (e.key === "Enter") {
     checkUserInput();
   }
