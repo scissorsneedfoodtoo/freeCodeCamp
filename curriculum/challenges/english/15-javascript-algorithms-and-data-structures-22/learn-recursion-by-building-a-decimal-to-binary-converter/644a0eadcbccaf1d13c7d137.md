@@ -140,6 +140,7 @@ h1 {
 ```js
 const numberInput = document.getElementById("number");
 const convertBtn = document.getElementById("convert");
+const result = document.getElementById("result");
 
 const decimalToBinary = (input) => {
 --fcc-editable-region--
@@ -153,7 +154,7 @@ const checkUserInput = () => {
     return; // Return early if the user input is invalid
   }
 
-  decimalToBinary(numberInput.value);
+  decimalToBinary(parseInt(numberInput.value));
 };
 
 convertBtn.addEventListener("click", checkUserInput);

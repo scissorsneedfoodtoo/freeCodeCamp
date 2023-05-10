@@ -1,13 +1,21 @@
 ---
 id: 644b6ad4fa8dfd600a9dff2c
-title: Step 26
+title: Step 27
 challengeType: 0
-dashedName: step-26
+dashedName: step-27
 ---
 
 # --description--
 
-Inside your `while` loop, use the `push()` method to append `input` to the `inputs` array. This will help you get a better idea of how the conversion works later when you log the contents of your arrays to the console.
+To divide numbers in JavaScript, use the division operator (`/`). For example:
+
+```js
+const quotient = 5 / 2; // 2.5
+```
+
+In the example above, `5` is the <dfn>dividend</dfn>, `2` is the <dfn>divisor</dfn>, and the result, `2.5`, is called the <dfn>quotient</dfn>.
+
+Inside your `while` loop, create a variable named `quotient` and assign it the value of `input` divided by `2`.
 
 # --hints--
 
@@ -119,6 +127,7 @@ h1 {
 ```js
 const numberInput = document.getElementById("number");
 const convertBtn = document.getElementById("convert");
+const result = document.getElementById("result");
 
 const decimalToBinary = (input) => {
   const inputs = [];
@@ -126,9 +135,11 @@ const decimalToBinary = (input) => {
   const remainders = [];
 
   while (input > 0) {
---fcc-editable-region--
+    --fcc-editable-region--
 
---fcc-editable-region--
+    --fcc-editable-region--
+
+    input = 0;
   }
 }
 
@@ -138,7 +149,7 @@ const checkUserInput = () => {
     return; // Return early if the user input is invalid
   }
 
-  decimalToBinary(numberInput.value);
+  decimalToBinary(parseInt(numberInput.value));
 };
 
 convertBtn.addEventListener("click", checkUserInput);

@@ -123,6 +123,7 @@ h1 {
 ```js
 const numberInput = document.getElementById("number");
 const convertBtn = document.getElementById("convert");
+const result = document.getElementById("result");
 
 const checkUserInput = () => {
   if (!numberInput.value || isNaN(parseInt(numberInput.value))) {
