@@ -1,8 +1,8 @@
 ---
 id: 644a0eadcbccaf1d13c7d137
-title: Step 21
+title: Step 22
 challengeType: 0
-dashedName: step-21
+dashedName: step-22
 ---
 
 # --description--
@@ -155,6 +155,7 @@ const checkUserInput = () => {
   }
 
   decimalToBinary(parseInt(numberInput.value));
+  numberInput.value = "";
 };
 
 convertBtn.addEventListener("click", checkUserInput);
