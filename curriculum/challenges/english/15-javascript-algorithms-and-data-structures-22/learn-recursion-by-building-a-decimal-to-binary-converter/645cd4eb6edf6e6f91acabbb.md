@@ -1,17 +1,15 @@
 ---
-id: 645c8fe0c9505407650c4ac6
-title: Step 63
+id: 645cd4eb6edf6e6f91acabbb
+title: Step 56
 challengeType: 0
-dashedName: step-63
+dashedName: step-56
 ---
 
 # --description--
 
-A recursive function is a function that calls itself over and over. But you have to be careful because you can easily create an infinite loop. That's where the <dfn>base case</dfn> comes in. The base case is when the function stops calling itself, and it is a good idea to write it first.
+Then the function `b()` executes and evaluates to `"is " + "awesome!"`.
 
-Since your `countdown()` function will count down from a given number to zero, the base case is when the `number` parameter is equal to `0`. Then it should `return` to break out of its recursive loop.
-
-Use an `if` statement to check if `number` is equal to `0`. If it is, `return`.
+Update your mock call to `b()` so it looks like this: `- b(): "is " + "awesome!"`.
 
 # --hints--
 
@@ -121,17 +119,32 @@ h1 {
 ```
 
 ```js
-const numberInput = document.getElementById("number");
+const a = () => {
+  return "freeCodeCamp " + b();
+};
+
+const b = () => {
+  return "is " + c();
+};
+
+const c = () => {
+  return "awesome!";
+};
+
+console.log(a());
+
+/*
+  Call stack:
+
+--fcc-editable-region--
+  - b(): "is " + c()
+  - a(): "freeCodeCamp " + b()
+--fcc-editable-region--
+*/
+
+/* const numberInput = document.getElementById("number");
 const convertBtn = document.getElementById("convert");
 const result = document.getElementById("result");
-
-const countdown = (number) => {
-  console.log(number);
-
---fcc-editable-region--
-  
---fcc-editable-region--
-};
 
 const decimalToBinary = (input) => {
   let binary = "";
@@ -165,5 +178,5 @@ numberInput.addEventListener("keydown", (e) => {
   if (e.key === "Enter") {
     checkUserInput();
   }
-});
+}); */
 ```
