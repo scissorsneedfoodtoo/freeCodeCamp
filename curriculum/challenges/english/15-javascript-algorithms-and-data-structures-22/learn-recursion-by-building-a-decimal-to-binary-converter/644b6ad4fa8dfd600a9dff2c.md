@@ -141,7 +141,7 @@ const decimalToBinary = (input) => {
 
     input = 0;
   }
-}
+};
 
 const checkUserInput = () => {
   if (!numberInput.value || isNaN(parseInt(numberInput.value))) {

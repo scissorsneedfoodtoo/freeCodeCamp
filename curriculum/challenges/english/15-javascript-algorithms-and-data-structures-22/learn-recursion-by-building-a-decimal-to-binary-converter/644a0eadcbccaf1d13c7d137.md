@@ -146,7 +146,7 @@ const decimalToBinary = (input) => {
 --fcc-editable-region--
   return "1";
 --fcc-editable-region--
-}
+};
 
 const checkUserInput = () => {
   if (!numberInput.value || isNaN(parseInt(numberInput.value))) {
