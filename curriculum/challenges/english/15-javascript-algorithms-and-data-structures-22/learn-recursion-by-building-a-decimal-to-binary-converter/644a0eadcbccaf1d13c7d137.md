@@ -68,7 +68,7 @@ Test 1
     </div>
 
     <h2 id="result"></h2>
-    <div id="show-animation"></div>
+    <div id="animation-container"></div>
     <script src="script.js"></script>
   </body>
 </html>
@@ -120,6 +120,7 @@ h1 {
 
 #result {
   width: 200px;
+  min-height: 80px;
   padding: 15px 0;
   margin: 30px auto 0;
   border: 5px solid var(--orange);
@@ -127,10 +128,14 @@ h1 {
   text-align: center;
 }
 
-.show-animation {
-  width: 30%;
+#animation-container {
+  margin: auto;
+  max-width: 300px;
+}
+
+.animation-frame {
   margin: 250px auto 0;
-  padding: 15px 0;
+  padding: 15px 10px;
   border: 5px solid var(--orange);
   font-size: 1.2rem;
   text-align: center;
